@@ -1,26 +1,23 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
-import 'package:go_router_flutter_app/screens/home_screen.dart';
+import 'package:go_router_flutter_app/routes/app_router.dart';
 
 void main(List<String> args) {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  MyApp({super.key});
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
       debugShowCheckedModeBanner: false,
-      routerConfig: router,
-    );
+      title: "go router navigation app",
+      theme: ThemeData(
+        primaryColor: Colors.deepPurple,
+        appBarTheme: const AppBarTheme(color: Colors.deepPurple),
+      ),
+      routerConfig: AppRouter().router,
+    ); 
   }
-
-  final GoRouter router = GoRouter(routes: [
-    GoRoute(
-      path: '/',
-      builder: (context, state) => const HomeScreen(),
-    )
-  ]);
 }
