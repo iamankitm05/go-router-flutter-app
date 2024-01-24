@@ -22,7 +22,6 @@ class MyApp extends StatelessWidget {
         appBarTheme: const AppBarTheme(color: Colors.deepPurple),
       ),
       routerConfig: GoRouter(
-        initialLocation: "/1",
         routes: [
           GoRoute(
             name: "users_lists",
